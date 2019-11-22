@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+        <script >
+                var books=[];
+
+
+function Book()
+
+  {
+    this.book =document.getElementById('name').value;
+    this.autor =document.getElementById('autor').value;
+    this.rik=document.getElementById('rik').value;
+    this.vudano = document.getElementById('vudano').value;
+    this.storinok = document.getElementById('kilk').value;
+    
+  }
+
+
+ 
+
+function  add()
+{
+  var o=new Book(document.getElementById('name').value,document.getElementById('autor').value,document.getElementById('rik').value,document.getElementById('vudano').value,document.getElementById('kilk').value);
+  books.push(o);
+  console.log("Ми додали наступну книгу: ");
+  console.log(o); 
+}
+
+function out()
+{
+  books.sort(function(a, b)
+  {
+    return a.rik-b.rik
+  })
+
+
+  books.sort(function(a, b){
+    var vudanoA=a.vudano.toLowerCase(), vudanoB=b.vudano.toLowerCase()
+    if (vudanoA < vudanoB)
+      return -1
+    if (vudanoA > vudanoB)
+      return 1
+    return 0
+    })
+  console.log("Відсортований список книг:");
+  for(i=0;i<books.length;i++)
+  console.log("Видавництво: "+books[i].vudano+",    рік видавництва: "+books[i].rik,",    кількість сторінок: "+books[i].storinok,",    автор книги: "+books[i].autor);
+ 
+}
+                </script>
+
+        <form>
+               <h2>Додати  книжку:</h2>
+               <p>
+                <input type="text" id="name"placeholder="Назва книжки"> 
+                <input type="text" id="autor"placeholder="Прізвище і ініціали автора"> 
+                <input type ="text" id="rik"placeholder="Рік видавництва"> 
+                <input type="text" id="vudano"placeholder="Назва видавництва"> 
+                <input type="text" id="kilk"placeholder="Кількість сторінок"> 
+              </p>
+                <!-- <input type="button" value="Заповнити список книг" onclick="autoadd()"><br> -->
+                <input type="button" value="Додати книгу" onclick="add()"><br>
+                <input type="button" value="Вивести усі книжки" onclick="out()">
+        </form>
+        
+    </body>
+</html>
