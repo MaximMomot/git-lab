@@ -1,3 +1,3 @@
 function name(params) {
-let k = 0;    
+  let x=0;  
 }
