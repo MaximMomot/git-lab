@@ -1,4 +1,7 @@
 function name(params) {
-let k = 0;
-let c= 5;    
+    let x=0;  
+    let k=0;
+  
+  let k = 0;
+  let c= 5;  
 }
